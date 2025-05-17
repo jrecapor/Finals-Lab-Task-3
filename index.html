@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Final Lab Task 3 - Table Manipulation</title>
+    <style>
+        /* General body and background setup */
+        body {
+            background-color: #121212;
+            background-image: url('https://i.gifer.com/5ARz.gif');  /* Replace with a valid image URL */
+            background-size: cover;
+            color: #e0e0e0;
+            font-family: 'Cooper Black', Britannic Bold;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-position: center;
+            background-attachment: fixed;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            text-align: center;  /* Centers the text for the entire body */
+        }
+
+        /* Header style */
+        header {
+            background-color: rgba(30, 30, 30, 0.8);
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #00bcd4; /* Cyan color */
+            text-shadow: 0 0 20px rgba(0, 188, 212, 0.7);
+            margin: 0;
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Navigation styling */
+        nav {
+            background-color: rgba(30, 30, 30, 0.9);
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        nav a {
+            color: #00bcd4;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 15px;
+            margin: 0 15px;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: rgba(0, 188, 212, 0.5);
+            color: white;
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.7);
+        }
+
+        /* Section styling */
+        .section {
+            padding: 50px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Ensures the section content is centered */
+            justify-content: center;
+        }
+
+        .box {
+            background-color: rgba(30, 30, 30, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 188, 212, 0.5);
+            margin-bottom: 40px;
+            transition: transform 0.3s ease-in-out;
+            text-align: left;  /* Keeps the text inside the box left-aligned */
+            max-width: 800px;  /* Ensures the box doesn't stretch too wide */
+            width: 100%;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: rgba(30, 30, 30, 0.9);
+            color: #00bcd4;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        footer p {
+            font-size: 1.1em;
+            text-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
+        }
+
+        /* Add smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Final Lab Task 3 - Table Manipulation</h1>
+</header>
+
+<nav>
+    <a href="#task1">Task 1</a>
+    <a href="#task2">Task 2</a>
+    <a href="#task3">Task 3</a>
+    <a href="#task4">Task 4</a>
+</nav>
+
+<!-- Task 1 Section -->
+<section class="section" id="task1">
+    <div class="box">
+        <h2>🔹 Task 1: Create a Product Table</h2>
+        <p><strong>Table Fields:</strong></p>
+        <ul>
+            <li>id: Unique integer, auto-increment, primary key.</li>
+            <li>product_name: String (VARCHAR), up to 100 characters, cannot be null.</li>
+            <li>price: Decimal.</li>
+        </ul>
+        <h3>Query:</h3>
+        <img src="https://raw.githubusercontent.com/jrecapor/EDM-John-Paul/main/Final%20Task%203/Images/Product.png" alt="Product Table Query">
+        <h3>Table:</h3>
+        <img src="https://raw.githubusercontent.com/jrecapor/EDM-John-Paul/main/Final%20Task%203/Images/Product_tbl.png" alt="Product Table">
+    </div>
+</section>
+
+<!-- Task 2 Section -->
+<section class="section" id="task2">
+    <div class="box">
+        <h2>🔹 Task 2: Add Check Constraint</h2>
+        <p><strong>Ensure that the price is greater than 0.</strong></p>
+        <h3>Query:</h3>
+        <img src="https://raw.githubusercontent.com/jrecapor/EDM-John-Paul/main/Final%20Task%203/Images/Task2.png" alt="Task 2 Query">
+    </div>
+</section>
+
+<!-- Task 3 Section -->
+<section class="section" id="task3">
+    <div class="box">
+        <h2>🔹 Task 3: Insert Valid Products</h2>
+        <p><strong>Products to insert:</strong></p>
+        <ul>
+            <li>Product 1: "Laptop", 999.99</li>
+            <li>Product 2: "Headphones", -49.99 (Invalid)</li>
+            <li>Product 3: "Smartphone", 599.99</li>
+            <li>Product 4: "Tablet", 299.99</li>
+            <li>Product 5: "Monitor", -149.99 (Invalid)</li>
+            <li>Product 6: "Keyboard", 19.99</li>
+            <li>Product 7: "Mouse", 14.99</li>
+            <li>Product 8: "Desk Lamp", 24.99</li>
+            <li>Product 9: "External Hard Drive", -79.99 (Invalid)</li>
+            <li>Product 10: "Speakers", 9.99</li>
+        </ul>
+        <h3>Query:</h3>
+        <img src="https://raw.githubusercontent.com/jrecapor/EDM-John-Paul/main/Final%20Task%203/Images/Task3.png" alt="Task 3 Query">
+        <h3>Table:</h3>
+        <img src="https://raw.githubusercontent.com/jrecapor/EDM-John-Paul/main/Final%20Task%203/Images/Task3_tbl.png" alt="Task 3 Table">
+    </div>
+</section>
+
+<!-- Task 4 Section -->
+<section class="section" id="task4">
+    <div class="box">
+        <h2>🔹 Task 4: Modify Product Name Field</h2>
+        <p><strong>Increase the product_name field's length to 120 characters.</strong></p>
+        <h3>Query:</h3>
+        <img src="https://raw.githubusercontent.com/jrecapor/EDM-John-Paul/main/Final%20Task%203/Images/Task4.png" alt="Task 4 Query">
+        <h3>Table:</h3>
+        <img src="https://raw.githubusercontent.com/jrecapor/EDM-John-Paul/main/Final%20Task%203/Images/Task4_tbl.png" alt="Task 4 Table">
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2025 John Paul Recapor. All rights reserved.</p>
+    <a href="https://github.com/jrecapor/EDM-John-Paul/tree/main/Final%20Task%203" target="_blank" style="color: #00bcd4; text-shadow: 0 0 6px #00bcd4;">View Final Lab Task 3 on GitHub</a>
+</footer>
+
+</body>
+</html>
